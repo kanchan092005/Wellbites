@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #888 #f1f1f1; /* Thumb color and track color */
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 50%; /* Makes the thumb fully rounded */
+    border: 2px solid #f1f1f1; /* Padding around the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+
+
+/* Optional hover effect for Firefox */
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+
+.header-container {
+    float: left;
+    margin-top: 0;
+    width: 100%;
+    height: 80px;
+
+}
+
+.body-container {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.footer-container {
+    float: left;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
+}

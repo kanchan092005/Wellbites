@@ -1,0 +1,340 @@
+/* Main container */
+.home-container1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    float:left; /* Hide overflow for sliding effect */
+    margin-bottom: 0px;
+}
+
+/* Background slider container */
+.background-slider {
+    position: absolute;
+    width: 100%; /* Twice the container width for sliding effect */
+    height: 100%;
+    display: flex;
+    animation: slideBackground 6s infinite;
+}
+
+.home-container1-img {
+    width: 100%;
+    height: 100%;
+    flex: 0 0 100%; /* Each image takes 100% of the container width */
+    object-fit: cover; /* Ensures the image fits perfectly */
+    filter: blur(1.5px);
+}
+
+/* Sliding animation */
+@keyframes slideBackground {
+    0% {
+        transform: translateX(0); /* Show first image */
+    }
+    33.33% {
+        transform: translateX(0); /* Still show first image */
+    }
+    50% {
+        transform: translateX(-100%); /* Show second image */
+    }
+    83.33% {
+        transform: translateX(-100%); /* Still show second image */
+    }
+    100% {
+        transform: translateX(-200%); /* Show third image and loop back */
+    }
+}
+
+/* Title styling */
+.home-container1-title {
+    position: relative;
+    z-index: 1;
+    font-size: 65px;
+    text-align: center;
+    margin-top: 7%;
+    font-family: cursive;
+    color: rgb(46, 46, 46);
+    font-weight: 700;
+}
+
+/* Description styling */
+.home-container1-description {
+    position: relative;
+    z-index: 1;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 2%;
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+
+/* Search container styling */
+.serach-container {
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 50px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 30px;
+    margin-top: 3%;
+    margin-left: 25%;
+    box-shadow: 5px 5px 10px rgb(74, 74, 74);
+}
+
+#city {
+    width: 30%;
+    height: 50px;
+    float: left;
+    border-radius: 30px 0 0 30px;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    color: rgb(115, 115, 115);
+    font-family: cursive;
+}
+
+.search-box {
+    width: 70%;
+    height: 50px;
+    background-color: white;
+    float: left;
+    border-radius: 0 30px 30px 0;
+    font-size: 25px;
+    text-align: left;
+    color: rgb(115, 115, 115);
+    font-family: cursive;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+
+.offer-of-the-day {
+    margin-top: 550px;
+    height: 300px;
+    width: 97%;
+    background-image: url("./offer_img/delicious-food-prepared-jewish-hanukkah-celebration\ \(1\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    margin-left: 1.5%;
+    margin-right: 2%;
+    align-items: center;
+    padding-left: 50px;
+    border-radius: 10px;
+}
+
+.text-content {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.114);
+    /*Semi-transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(0, 0, 0);
+}
+
+.text-content:hover {
+    box-shadow: 0px 5px 30px rgb(0, 0, 0);
+}
+
+.text-content h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.text-content strong {
+    font-size: 48px;
+}
+
+.text-content p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.text-content button {
+    background-color: #ff4c4c;
+    /* Red color for the button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 190px;
+}
+
+.home-container2 {
+    width: 100%;
+    height: 350px !important;
+    background-color: rgba(240, 240, 240, 0.79);
+    float: left;
+    padding: 70px;
+    padding-top: 40px;
+    margin-top: 50px;
+}
+
+.home-container2 h2 {
+    font-family: cursive;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.home-container2-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.arrow {
+    display: flex;
+    letter-spacing: 0px;
+    margin-left: 55%;
+    margin-top: 7px;
+
+}
+
+.arrows {
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.arrows:hover {
+    background-color: rgb(180, 180, 180);
+}
+
+.home-inner-container2 {
+
+    width: 90%;
+    height: 250px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+    margin-left: 80px;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.home-inner-container2::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
+}
+
+.suggestion {
+    width: 170px;
+    margin-left: 10px;
+    margin-top: 7px;
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    scroll-snap-align: start;
+    /* Snaps each item to the start on scroll */
+    margin-right: 70px;
+}
+
+.suggestion-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px black;
+    object-fit: cover;
+}
+
+.suggestion-text {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.recommendation-type-title{
+    width: 130px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin-left: 20px;
+    border-radius: 5px;
+    opacity: 0;
+    box-shadow: 2px 2px 5px black;
+}
+
+.suggestion:hover .recommendation-type-title{
+    opacity: 1;
+}
+
+.filters {
+    /* border: 1px solid black; */
+    margin-left: 210px;
+    padding: 70px 2px 40px;
+    display: flex;
+}
+
+.filters div {
+    border: 1px solid rgb(83, 80, 80);
+    margin-right: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: cursive;
+    color: rgb(83, 80, 80);
+}
+
+.scroll-container {
+    max-height: 750px;
+    /* Limit height to 3 rows */
+    overflow-y: scroll;
+    padding: 10px;
+    margin-left: 150px;
+    /* Center the container */
+    width: 81%;
+    box-shadow: 2px 2px 10px rgb(175, 175, 175);
+    border-radius: 20px;
+    margin-bottom: 100px;
+    scrollbar-width: none;
+    /* For Firefox */
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.card {
+    border: none !important;
+    margin-bottom: 5rem;
+    border-radius: 30px;
+    height: 320px;
+    max-width: 22rem;
+    margin-right: 20px;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px rgb(197, 197, 197);
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    margin-top: 15px;
+}
+
+.card-body {
+    padding: 0px !important;
+    margin-top: 5px;
+}
+
+.card-text p {
+    font-weight: 200 !important;
+    font-family: cursive;
+}

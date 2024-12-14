@@ -1,0 +1,83 @@
+
+.search-container {
+    float: left;
+    width: 100%;
+    background-color: #522da818;
+    height: 530px;
+}
+
+.search-inner-container {
+    float: left;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #522da8f5;
+    height: 250px;
+    margin-top: 120px;
+    margin-left: 400px;
+    box-shadow: 10px 10px 20px #797979;
+}
+
+.title {
+    float: left;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    font-family: cursive;
+    color: white;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    float: left;
+    margin-left: 190px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    margin-top: 30px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 0;
+}
+
+
+/* Initial style for search-container to be off-screen */
+.search-inner-container {
+    position: relative;
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+    animation: slideIn 0.8s ease-out forwards;
+    /* Trigger animation */
+}
+
+/* Keyframes for slide-in effect */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+        /* Off-screen position */
+        opacity: 0;
+        /* Optional: fade in */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* On-screen position */
+        opacity: 1;
+    }
+}
+
+
+.stethoscope-box {
+    width: 167px;
+    height: 240px;
+    float: left;
+    background-image: url(./pngwing.com.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: multiply;
+    background-color:#522da818;
+    margin-top: 20px;
+}

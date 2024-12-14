@@ -1,0 +1,122 @@
+/* Styles for the header */
+.header {
+    height: 70px;
+    width: 98%;
+    display: flex;
+    border-radius: 25px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 20px rgb(179, 179, 179);
+    position: fixed;
+    /* Fixes the header to the top */
+    top: 0;
+    left: 15px;
+    background-color: #ffffff;
+    z-index: 1000;
+    /* Ensures the header stays above the content */
+    font-weight: bold;
+
+}
+
+/* Logo styling */
+.logo {
+    height: 50px;
+    width: 50px;
+    /* border: 1px solid black; */
+    margin-top: 7px;
+    margin-left: 40px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    font-family: cursive;
+    color: rgb(69, 69, 69);
+}
+
+.about {
+    width: 100%;
+    text-align: right;
+    margin-top: 18px;
+    margin-right: 50px;
+
+}
+
+.menu-btns {
+    margin-right: 10px;
+    text-decoration: none;
+    color: rgb(55, 55, 55);
+    padding: 15px;
+    font-size: 20px;
+    font-family: cursive;
+    
+}
+
+.menu-btns:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.getStarted {
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: rgb(48, 48, 48);
+}
+
+.getStarted:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.account-box-header {
+    color: rgb(77, 77, 77);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    font-size: 17px;
+    width: 35px;
+    height: 35px;
+    padding: 0px;
+    float: right;
+}
+
+.dropdown-header {
+    float: right;
+    position:absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.dropdown-content-header {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    right: 0;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.dropdown-content-header .a-header,
+.dropdown-content-header .option-header {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content-header .option-header:hover {
+    background-color: #ddd;
+}
+
+.dropdown-header:hover .dropdown-content-header {
+    display: block;
+}

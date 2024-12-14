@@ -1,0 +1,184 @@
+footer{
+    /* border: 1px solid black; */
+    /* width: 100%; */
+    height: 500px;
+    background-color: #F5F5F5;
+    border-radius: 40px 40px 0 0 ;
+    box-shadow: 0px -5px 10px rgba(41, 41, 41, 0.187);
+}
+
+.upper-footer{
+    display: flex;
+}
+
+.logo-footer{
+    margin-left: 80px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-weight: bold;
+    width: 50%;
+}
+.logo-footer a{
+    text-decoration: none;
+    font-family: cursive;
+    color: rgb(69, 69, 69);
+}
+.country{
+    height:40px;
+    font-size: 20px;
+    font-weight: bold;
+   border: 1px solid black;
+   border-radius:5px;
+   margin-right: 40px;
+   margin-top: 50px;
+   margin-left: 30%;
+   width: 15%;
+   display: flex;
+   text-align:center;
+   /* padding:5px; */
+   padding-right: 5px;
+   padding-left: 10px;
+   border: 1px solid black;
+   padding-top:7px;
+   font-family: cursive;
+}
+.flag{
+   background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png');
+   background-size: cover; /* Makes the background image cover the entire div */
+    background-position: center; /* Centers the image */
+    width: 30px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    overflow: hidden;
+    margin-right: 10px;
+    margin-top: 5px;    
+}
+.lang{
+    height:40px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius:5px;
+    margin-right: 60px;
+    margin-top: 50px;
+    width: 15%;
+    display: flex;
+    padding-right: 5px;
+    padding-left: 10px;
+   text-align:center;
+   padding-top: 7px;
+   font-family: cursive;
+}
+.globe{
+    margin-right: 5px;
+}
+.about-site-menu{
+    display: flex;
+  
+}
+.about-f{
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-left: 20px;
+}
+.about-f h2{
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+.about-f li{
+    list-style-type: none;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: cursive;
+}
+
+.Wellverse{
+    margin-right: 50px;
+}
+.Wellverse h2{
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.Wellverse li{
+    list-style-type: none;
+    padding-left: 20px;
+    font-family: cursive;
+    padding-bottom: 10px;
+}
+.for{
+    margin-right: 50px;
+}
+.for h2{
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.for li{
+    list-style-type: none;
+    padding-left: 20px;
+    font-family: cursive;
+    padding-bottom: 10px;
+}
+
+.learn{
+    margin-right: 50px;
+}
+.learn h2{
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+
+.learn li{
+    list-style-type: none;
+    padding-left: 20px;
+    font-family: cursive;
+    padding-bottom: 10px;
+}
+.links{
+    margin-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.links h2{
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+}
+.link{
+    width: 160px;
+    display: flex;
+    
+    letter-spacing: 10px;
+    font-size: 20px;
+    padding: 5px;
+}
+.insta{
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png');
+    background-size: cover; /* Makes the background image cover the entire div */
+    background-position: center; /* Centers the image */
+    width: 30px; /* Set the desired width */
+    height: 20px; /* Set the desired height */
+    overflow: hidden;
+    width: 12%;
+    margin-right: 10px;
+    margin-top:5px;
+}
+
+.linkdein{
+    color: rgb(77, 77, 233);
+}
+.utube{
+    color:red;
+}
+.FB{
+    color: rgb(63, 63, 233);
+}
+.whtp{
+    color:rgb(109, 216, 109);
+}
