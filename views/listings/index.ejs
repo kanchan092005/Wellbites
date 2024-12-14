@@ -1,0 +1,149 @@
+<% layout("/layouts/boilerplate") %>
+    <link rel="stylesheet" href="/css/index.css">
+
+    <div class="home-container1">
+        <div class="background-slider">
+            <img class="home-container1-img" src="css/d.jpg" alt="img1">
+            <img class="home-container1-img" src="css/l.jpg" alt="img2">
+            <img class="home-container1-img" src="css/m.jpg" alt="img2">
+        </div>
+
+        <div class="home-container1-title">WellBite</div>
+        <div class="home-container1-description">Discover the best food & drinks near you</div>
+
+        <div class="serach-container">
+            <div class="location-container">
+                <select id="city" name="city">
+                    <option>Location</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="jaipur">Jaipur</option>
+                    <option value="pune">Pune</option>
+                    <option value="banglore">Banglore</option>
+                </select>
+            </div>
+            <a style="text-decoration: none; color: rgb(141, 141, 141);" href="/search_page">
+                <div class="search-box"><i class="fa-solid fa-grip-lines-vertical"></i> Search...</div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="offer-of-the-day">
+        <div class="text-content">
+            <h2>Get up to<br> <strong>50% OFF</strong></h2>
+            <p>on Recipe Of The Day</p>
+            <a href="/showROTD"><button>Order Now</button></a>
+        </div>
+    </div>
+
+    <% if (!hasOrders) { %>
+        <div class="home-container2">
+            <div class="home-container2-head">
+                <div>
+                    <h2>Inspiration for your first order</h2>
+                </div>
+                <div class="arrow">
+                    <!-- Left arrow -->
+                    <div class="arrows left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+                    <!-- Right arrow -->
+                    <div class="arrows right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <div class="home-inner-container2" id="scrollable-container">
+                <% let count=0; %>
+                    <% for(let listing of allListings) { %>
+                        <% if(count>= 8) break; %>
+                            <a href="/<%= listing.id %>/showListing" style="text-decoration: none; color: black">
+                                <div class="suggestion">
+                                    <!-- Suggestion content here -->
+                                    <div class="suggestion-image">
+                                        <img src="<%= listing.image.url %>" alt="Suggestion Image"
+                                            style="width:100%; height:100%; border-radius: 100%; background-repeat: no-repeat; object-fit: cover; background-size: contain;">
+                                    </div>
+                                    <p class="suggestion-text">
+                                        <%= listing.title %>
+                                    </p>
+                                </div>
+                            </a>
+                            <% count++; %>
+                                <% } %>
+
+            </div>
+        </div>
+        <% } else { %>
+            <div class="home-container2">
+                <div class="home-container2-head">
+                    <div>
+                        <h2>What's on your mind?</h2>
+                    </div>
+                    <div class="arrow">
+                        <!-- Left arrow -->
+                        <div class="arrows left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+                        <!-- Right arrow -->
+                        <div class="arrows right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="home-inner-container2" id="scrollable-container">
+                    <% for(let recommendation of allRecommendations) { %>
+                        <% if (recommendation.item) { %> <!-- Check if item is populated -->
+                            <a href="/<%= recommendation.item._id %>/showListing"
+                                style="text-decoration: none; color: black">
+                                <div class="suggestion">
+                                    <div class="suggestion-image">
+                                        <img src="<%= recommendation.item.image.url %>" alt="Suggestion Image"
+                                            style="width:100%; height:100%; border-radius: 100%; background-repeat: no-repeat; object-fit: cover; background-size: contain;">
+                                    </div>
+                                    <p class="suggestion-text">
+                                        <%= recommendation.item.title %>
+                                    </p>
+                                    <div class="recommendation-type-title">
+                                        <p>
+                                            <%= recommendation.recommendationType %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <% } %> <!-- End of check -->
+                                <% } %>
+
+
+
+                </div>
+            </div>
+            <% } %>
+
+
+
+
+                <div class="filters">
+                    <div> <i class="fa-solid fa-sliders" style="color: rgb(83, 80, 80);"></i>&nbsp; Filter</div>
+                    <div>Pure Veg</div>
+                    <div>Cuisines &nbsp; <i class="fa-solid fa-angle-down" style="color: rgb(83, 80, 80);"></i></div>
+                </div>
+
+                <div class="scroll-container">
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+                        <% for (let listing of allListings) { %>
+                            <a href="/<%= listing.id %>/showListing" style="text-decoration: none; color: black">
+                                <div class="card col">
+                                    <img src="<%= listing.image.url %>" class="card-img-top" alt="..."
+                                        style="height: 15rem; width:20rem !important;">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            <b>
+                                                <%= listing.title %>
+                                            </b><br>
+                                            Price:&nbsp;&nbsp;<%= listing.price.toLocaleString("en-IN", {
+                                                style: "currency" , currency: "INR" , minimumFractionDigits: 0 }) %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <% } %>
+                    </div>
+                </div>
+
+
+                <script src="/js/arrow.js"></script>

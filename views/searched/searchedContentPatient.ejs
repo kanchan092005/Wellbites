@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/search_page_regular.css">
+
+
+
+<div class="recipes-container">
+    <h2 class="page-heading">Recipes To Reduce <%= disease.title %></h2>
+
+    <% if (recipes && recipes.length > 0) { %>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+            <% recipes.forEach(recipe => { %>
+                <% if (recipe.img_url != "https://geniuskitchen.sndimg.com/gk/img/gk-shareGraphic.png") { %>
+                    <a href="/<%= recipe.Recipe_title%>/showListingPatient" style="text-decoration: none; color: black">
+                        <div class="card col">
+                            <img src="<%= recipe.img_url %>" class="card-img-top" alt="Image not available"
+                                style="height: 15rem; width: 20rem !important;"
+                                onerror="this.src='/images/default.jpg';">
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <b>
+                                        <%= recipe.Recipe_title %>
+                                    </b><br>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                <% } %>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No recipes found for this ingredient.</p>
+    <% } %>
+</div>

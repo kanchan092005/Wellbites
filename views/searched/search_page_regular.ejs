@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+
+    <link rel="stylesheet" href="/css/search_page_regular.css">
+
+    <div class="search-container">
+        <div class="search-inner-container">
+            <div class="title">Search the name of dish</div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Search</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <% var displayedListings=[]; %>
+                    <% for (listing of allListings) { %>
+                        <% var listingKey=listing.title; %>
+                        <% if (!displayedListings.includes(listingKey)) { %>
+                                <a href="/<%= listing._id %>/showListing">
+                                    <%= listing.title %>
+                                </a>
+                                <% displayedListings.push(listingKey); %>
+                        <% } %>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="filters">
+        <div> <i class="fa-solid fa-sliders" style="color: rgb(83, 80, 80);"></i>&nbsp; Filter</div>
+        <div>Pure Veg</div>
+        <div>Cuisines &nbsp; <i class="fa-solid fa-angle-down" style="color: rgb(83, 80, 80);"></i></div>
+    </div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for (let listing of allListings) { %>
+            <a href="/<%= listing.id %>/showListing" style="text-decoration: none; color: black">
+                <div class="card col">
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="Image not available"
+                        style="height: 15rem; width: 20rem !important;" onerror="this.src='/images/default.jpg';">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b>
+                                <%= listing.title %>
+                            </b><br>
+                            Price:&nbsp;&nbsp;<%= listing.price.toLocaleString("en-IN", { style: "currency" ,
+                                currency: "INR" , minimumFractionDigits: 0 }) %>
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+    </div>
+    </div>
+
+    <script src="/js/dropdown.js"></script>

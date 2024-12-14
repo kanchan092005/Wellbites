@@ -1,0 +1,107 @@
+<% layout("/layouts/boilerplate") %>
+    <link href="/css/show_ROTD.css" rel="stylesheet">
+
+    <div class="container2" style="margin-top: 40px;margin-bottom: 80px;">
+        <!-- Top Row for Image and Product Details Box 1 -->
+        <div class="top-row">
+            <div class="product-img-box">
+                <img src="<%= recipeOfTheDay.img_url %>" alt="product image" class="listing-img">
+            </div>
+
+            <div class="product-details-box">
+                <h2 class="product-title">
+                    <%= recipeOfTheDay.Recipe_title %>
+                </h2>
+                <hr>
+                
+                <p class="product-tax">Inclusive of all taxes</p>
+                <hr>
+                <div class="product-service-card">
+                    <p>Calories: <%= recipeOfTheDay.Calories %>
+                    </p>
+                </div>
+                <div class="product-service-card">
+                    <p>Protein: <%= recipeOfTheDay["Protein (g)"] %>g</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Product Details Box 2 -->
+        <div class="product-details-box2">
+            <div class="product-purchase-box">
+                <a class="text-deco" href="/cart">
+                    <div class="product-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                </a>
+                <form action="#" method="POST">
+                    <button class="addToCart-btn">Add To Cart</button>
+                </form>
+            </div>
+
+            <div class="offer-box">
+                <div class="offer-box-2">
+                    <div class="product-title">Deals for you</div>
+                    <div class="arrow">
+                        <div class="arrows left-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+                        <div class="arrows right-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="offers" id="scrollable-container">
+                    <div class="offer">
+                        <div class="offer-icon" style="background-color: #5A68D4;font-size: 14px;">SAVE X2</div>
+                        <div class="offer-details">
+                            <h4 style="margin-top: 30px;"> Extra ₹25 Off</h4>
+                            <p>APPLICABLE OVER & ABOVE COUPONS</p>
+                        </div>
+                    </div>
+                    <div class="offer">
+                        <div class="offer-icon" style="background-color: #FF6D3B;">DEAL OF DAY</div>
+                        <div class="offer-details">
+                            <h4>Items At ₹199</h4>
+                            <p>ON SELECT ITEMS</p>
+                        </div>
+                    </div>
+                    <div class="offer">
+                        <div class="offer-icon" style="background-color: #8e278ec3;font-size: 40px;">%</div>
+                        <div class="offer-details">
+                            <h4>5% Cashback</h4>
+                            <p>ON ALL ORDERS</p>
+                        </div>
+                    </div>
+                    <div class="offer">
+                        <div class="offer-icon" style="background-color: #FF9F1A;">LIMITED OFFER</div>
+                        <div class="offer-details">
+                            <h4>Flat ₹50 Off</h4>
+                            <p>ON PURCHASE ABOVE ₹500</p>
+                        </div>
+                    </div>
+                    <div class="offer">
+                        <div class="offer-icon" style="background-color: #4CAF50;font-size: 9px;">FREE DELIVERY</div>
+                        <div class="offer-details">
+                            <h4>Free Delivery</h4>
+                            <p>ON ORDERS ABOVE ₹1000</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="rating-container">
+            <div class="rating"></div>
+            <div class="about-rating">
+                <div class="asian" style="margin-left: 5px; font-size: 17px;"><a><b>Asian</b></a></div>
+                <div class="about-rating-2">
+                    <div class="delivery-time"><i class="fa-solid fa-map-pin"></i></div>
+                    <div class="time">
+                        <div style="margin: 5px;">Outlet</div>
+                        <div style="margin-left: 5px;">30-35 min</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/rating.js"></script>
+    <script src="/js/arrow.js"></script>

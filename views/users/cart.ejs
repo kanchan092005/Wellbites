@@ -1,0 +1,90 @@
+<% layout("/layouts/boilerplate") %>
+    <link href="/css/cart.css" rel="stylesheet">
+
+    <div class="back"> <a href="/"><i class="fa-solid fa-arrow-left"></i> Add Something More </a></div>
+
+    <% if (cart && cart.items.length> 0) { %>
+
+
+        <div class="cart">
+
+            <div class="in-process">
+                <div class="at-point">
+                    <div class="circle completed1"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="line"></div>
+                    <div class="circle completed1"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="line"></div>
+                    <div class="circle completed" style="background-color: none !important;"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+                <div class="about-point">
+                    <div>Added to Cart</div>
+                    <div>Cart Info</div>
+                    <div>Payment Method</div>
+                </div>
+            </div>
+
+            <% cart.items.forEach(item=> { %>
+
+                <div class="items">
+                    <div class="item">
+                        <div class="added-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                        <div class="added-img">
+                            <img class="cart-item-img" src="<%= item.product.image.url %>"
+                                alt="<%= item.product.title %>">
+                        </div>
+                        <div class="added-name">
+                            <p>
+                                <%= item.product.title %>
+                            </p>
+                        </div>
+                        <div class="amount">
+                            <p>
+                                ₹<%= item.price.toFixed(2) %>
+                            </p>
+                        </div>
+                        <div class="qnty">
+                            <div class="qnty-btn" style="border-radius: 10px 0px 0px 10px;"><i
+                                    class="fa-solid fa-minus"></i></div>
+                            <div class="qnty-btn"><i class="fa-solid fa-1"></i></div>
+                            <div class="qnty-btn" style="border-radius: 0px 10px 10px 0px;"><i
+                                    class="fa-solid fa-plus"></i>
+                            </div>
+                        </div>
+
+                        <div class="remove">
+                            <form action="/<%= item.product._id %>/deleteFromCart" method="POST">
+                                <button type="submit" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <% }) %>
+
+                    <div class="end-process">
+                        <div class="coupen">
+                            <input type="text" class="coupen-code" placeholder="Coupon Code">
+                            <button class="apply-coupen">Apply Coupon <b>→</b></button>
+                        </div>
+                        <div class="payment">
+                            <div class="total">
+                                <h3>Cart Total</h3>
+                                <p>Subtotal<span>₹<%= cart.totalPrice %></span></p>
+                                <p>Delievery Charge<span>₹<%= (cart.totalPrice*20)/100 %></span></p>
+                                <p>Taxes<span>₹<%= (cart.totalPrice*5)/100 %></span></p>
+                                <p></p>
+                                <hr>
+                                <p>Total<span>₹<%= cart.totalPrice + (cart.totalPrice*5)/100 +
+                                            (cart.totalPrice*20)/100%></span></p>
+                            </div>
+                            <a href="/checkOut"><button class="checkout">Proceed To Checkout <b>→</b></button></a>
+                        </div>
+                    </div>
+
+        </div>
+
+        <% } else { %>
+            <div class="empty"></div>
+            <div class="empty-cart-title" style="color: rgb(138, 138, 138); width: 100%; height: 100px; text-align: center; font-size: 30px; margin-bottom: 70px; font-family: cursive; "><p><b>Oops! Your cart is empty.</b></p></div>
+            <% } %>

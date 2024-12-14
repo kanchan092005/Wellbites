@@ -1,0 +1,76 @@
+<% layout("/layouts/boilerplate") %>
+<link href="/css/checkOut.css" rel="stylesheet">
+<div class="placeOrder">
+    <!-- Order Process Indicator -->
+    <div class="in-process-placeOrder">
+        <div class="at-point-placeOrder">
+            <div class="circle-placeOrder completed"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="line-placeOrder"></div>
+            <div class="circle-placeOrder completed"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="line-placeOrder"></div>
+            <div class="circle-placeOrder completed"><i class="fa-solid fa-circle-check"></i></div>
+        </div>
+        <div class="about-point-placeOrder">
+            <div>Added to Cart</div>
+            <div>Cart Info</div>
+            <div>Payment Method</div>
+        </div>
+    </div>
+    
+    <!-- Customer Information -->
+    <div class="customer-info">
+        <div class="customer-personal-info">
+            <h3>Personal Information</h3>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+        
+        <!-- Address Information -->
+        <div class="customer-address">
+            <h3>Address</h3>
+            <label for="house">House/Flat No:</label>
+            <input type="text" id="house" placeholder="Enter house/flat no">
+            
+            <label for="landmark">Landmark:</label>
+            <input type="text" id="landmark" placeholder="Enter landmark">
+            
+            <label for="city">City:</label>
+            <input type="text" id="city" placeholder="Enter city">
+            
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" placeholder="Enter zip code">
+        </div>
+    </div>
+
+    <div class="customer-payment-method">
+        <h3>Select Payment Method</h3>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment-method" value="cash-on-delivery" checked>
+                <span>Cash on Delivery</span>
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="credit-card">
+                <span>Credit Card</span>
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="debit-card">
+                <span>Debit Card</span>
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="paypal">
+                <span>PayPal</span>
+            </label>
+        </div>
+        
+        <!-- Place Order Button -->
+        <a href="/placeOrder"><button class="place-order-button">Place Your Order</button></a>
+    </div>
+    
+</div>

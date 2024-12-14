@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/css/header.css">
+
+<nav class="header">
+    <div class="logo">
+        <a href="/">WellBite</a>
+    </div>
+    <div class="about">
+        <a href="/about" class="menu-btns">About</a>
+        <a href="/askMe" class="menu-btns">Ask Me</a>
+        <a href="/cart" class="menu-btns" style="margin-right: 30px;"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+        <% if(!currUser){ %>
+            <a href="/get_started" class="getStarted">Get Started</a>
+        <% } else { %>
+            <div class="dropdown-header">
+                <button class="dropbtn-header account-box-header" style="background-color: white;"><i class="fa-solid fa-user-large"></i></button>
+                <div class="dropdown-content-header">
+                    <span class="a-header"><%= currUser.username %></span>
+                    <a href="/logout" class="option-header">Logout</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</nav>

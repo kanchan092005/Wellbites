@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+<link href="/css/askMe.css" rel="stylesheet">
+
+<div class="chatbot-container">
+    <div class="chatbot-header">
+        <h1>Ask Me</h1>
+    </div>
+    <div class="chatbot-body">
+        <div class="chat-messages" id="chat-messages">
+            <!-- Chat messages will go here -->
+            <div class="bot-message">
+                Hi there! How can I assist you today?
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Type your question here..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const apiUrl = "http://127.0.0.1:8000/api/query/"; // API endpoint
+
+    // Function to add messages to the chat window
+    function addMessage(role, message) {
+        const chatMessages = document.getElementById("chat-messages");
+        const messageDiv = document.createElement("div");
+        messageDiv.className = role === "user" ? "user-message" : "bot-message";
+        messageDiv.innerText = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+    }
+
+    // Function to handle sending the question to the API
+    async function sendQuestion() {
+        const userInput = document.getElementById("user-input");
+        const question = userInput.value.trim();
+
+        if (question === "") return; // Do nothing if input is empty
+
+        // Display user's message
+        addMessage("user", question);
+        userInput.value = ""; // Clear input field
+
+        // // Display loading message
+        // addMessage("bot", "Thinking...");
+
+        try {
+            // Send question to the API
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ question: question })
+            });
+
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
+            const data = await response.json();
+            const botResponse = data.response;
+
+            // Display bot's response
+            addMessage("bot", botResponse);
+        } catch (error) {
+            console.error("Error querying API:", error);
+            addMessage("bot", "Sorry, there was an error processing your request.");
+        }
+    }
+
+    // Event listeners
+    document.getElementById("send-btn").addEventListener("click", sendQuestion);
+    document.getElementById("user-input").addEventListener("keypress", function (e) {
+        if (e.key === "Enter") sendQuestion(); // Send on Enter key press
+    });
+</script>
